@@ -1,0 +1,36 @@
+/* Style for the visualization container */
+#visualization-container {
+  text-align: center; 
+  background-color: azure;
+  margin: auto; /* Center the container horizontally */
+  border: 1px solid #ccc; 
+  margin-bottom: 20px;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next row */
+  justify-content: center; /* Center cards horizontally */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+/* Style for the bars representing numbers */
+.bar {
+  display: inline-block;
+  width: 20px; /* Adjust width as needed */
+  background-color: blue; /* Change color as needed */
+  margin-right: 2px; /* Adjust margin between bars */
+}
+
+
+/* Style for the algorithm name */
+.algorithm-name {
+  font-size: 40px;
+  text-decoration:solid;
+  color:black;
+  margin-bottom: 20px; /* Add margin below the algorithm name */
+}
+
+.card {
+  width: fit-content;
+  margin: 10px;
+}
+
