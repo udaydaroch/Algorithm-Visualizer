@@ -82,14 +82,19 @@ document.addEventListener("DOMContentLoaded", function() {
             algorithmList.removeChild(cardWrapper);
         });
     }
-
     const visualizeButton = document.getElementById("visualize");
-    visualizeButton.addEventListener("click", function() {
+
+    // Add the event listener for the "Visualize" button
+    visualizeButton.addEventListener("click", visualizeButtonClickHandler);
+    
+
+    function visualizeButtonClickHandler() {
         const values = inputValuesField.value.split(",").map(value => parseInt(value.trim()));
        
         const visualizationContainer = document.getElementById("visualization-container");
-        visualizationContainer.innerHTML = "";
-
+        visualizationContainer.innerHTML = ""; // Clear the visualization container
+    
+        // Visualize the selected algorithms again
         selectedAlgorithms.forEach(function(algorithm) {
             switch(algorithm) {
                 case "selection":
@@ -121,24 +126,29 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
             }
         });
-    });
-
+    }
+    
+    
     function visualizeSorting(steps, algorithmName) {
         const visualizationContainer = document.getElementById("visualization-container");
         
         // Create container for the algorithm visualization card
         const algorithmCard = document.createElement("div");
         algorithmCard.classList.add("card", "mb-3");
-    
+        
         // Create card header for the algorithm name
         const cardHeader = document.createElement("div");
         cardHeader.classList.add("card-header");
         cardHeader.textContent = algorithmName;
         algorithmCard.appendChild(cardHeader);
-    
+        
         // Create card body for the bars representing numbers
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body", "bars-container");
+        algorithmCard.appendChild(cardBody);
+    
+        // Append the card to the visualization container
+        visualizationContainer.appendChild(algorithmCard);
     
         let stepIndex = 0;
     
@@ -152,15 +162,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     barDiv.style.height = `${value * 2.4}px`;
                     cardBody.appendChild(barDiv);
                 });
-                algorithmCard.appendChild(cardBody);
-                visualizationContainer.appendChild(algorithmCard);
                 stepIndex++;
-                setTimeout(nextStep, 1000); // Adjust delay as needed
+                setTimeout(nextStep, 100); // Adjust delay as needed
             }
         }
     
         nextStep();
     }
+    
     
     
     function selectionSortSteps(arr) {
@@ -412,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const steps = [];
         const max = Math.max(...arr);
         const digitCount = max.toString().length;
-
+    
         for (let i = 0; i < digitCount; i++) {
             let buckets = Array.from({ length: 10 }, () => []);
             for (let j = 0; j < arr.length; j++) {
@@ -422,7 +431,8 @@ document.addEventListener("DOMContentLoaded", function() {
             arr = buckets.flat();
             steps.push([...arr]); // Store the state of the array after each step
         }
-
+    
         return steps;
     }
+    
 });

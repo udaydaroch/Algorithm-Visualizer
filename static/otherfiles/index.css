@@ -1,0 +1,48 @@
+.navbar-nav {
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.navbar-brand {
+  margin-left: 25px; /* Move the brand to the left */
+}
+.nav-link {
+  width: 200px;
+  border-radius: 8px;
+}
+.navbar-nav .nav-link {
+  font-size: 40px; /* Adjust font size as needed */
+  margin-right: 150px; /* Adjust margin as needed */
+}
+
+.nav-link:hover {
+  background: rgb(180, 172, 128);
+  border-radius: 8px;
+}
+
+/* Center the cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+.card {
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%; /* Set fixed height for all cards */
+}
+.card-body {
+  padding: 20px;
+}
+
+.ImageSize {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}

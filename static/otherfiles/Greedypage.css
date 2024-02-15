@@ -1,0 +1,28 @@
+#graph {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  border: 1px solid #ccc;
+}
+
+/* Styles for nodes */
+.node {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #007bff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Styles for edges */
+.edge {
+  position: absolute;
+  background-color: #007bff;
+  opacity: 1;
+  height: 1px;
+}
